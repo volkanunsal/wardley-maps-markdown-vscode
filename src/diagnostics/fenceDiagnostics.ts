@@ -5,7 +5,7 @@ import type { FenceDiagnostic } from "./types";
 
 const DECLARATION_KEYWORDS = /^(component|anchor|submap|market|ecosystem|pipeline)\s+(.+?)(?:\s*\[|\s*\{|\s*$)/;
 const COORDINATE_STATEMENT = /^(component|anchor)\s+.+?\s*\[\s*([^,\]]+?)\s*,\s*([^,\]]+?)\s*\]/;
-const EVOLVE_STATEMENT = /^evolve\s+(.+?)\s+([^\s[]+)/;
+const EVOLVE_STATEMENT = /^evolve\s+(.+?)\s+([^\s[]+)$/;
 const LINK_STATEMENT = /^(.+?)\s*->\s*(.+?)$/;
 const Y_AXIS_STATEMENT = /^y-axis\b/;
 

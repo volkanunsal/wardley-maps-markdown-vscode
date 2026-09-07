@@ -38,6 +38,14 @@ test("a duplicate component name is a Warning", () => {
   assert.ok(result.some((d) => d.severity === "warning" && /already declared/.test(d.message)));
 });
 
+test("evolve with a multi-word target does not produce spurious diagnostics", () => {
+  const result = messages(
+    "title Broken\ncomponent Cup of Tea [0.2, 0.2]\nevolve Cup of Tea 0.5\n",
+  );
+  const evolveLineDiagnostics = result.filter((d) => d.line === 2);
+  assert.deepEqual(evolveLineDiagnostics, []);
+});
+
 test("y-axis is an Information notice, because cli-owm ignores it", () => {
   const result = messages("title Tea Shop\ny-axis Custom->Labels\ncomponent Foo [0.5, 0.5]\n");
   assert.ok(result.some((d) => d.severity === "information" && /does not support 'y-axis'/.test(d.message)));
