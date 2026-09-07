@@ -6,9 +6,7 @@ Both defects found in the original gate run are fixed by the local patch and con
 `test/cli-owm-patch.test.ts` (2/2 passing). **Block-form pipeline children** now render: `renderPipeline`
 iterates `pipeline.components` and draws each as a small rect + label positioned along the pipeline
 bar. **Attitude boxes** now render with a positive height: `renderAttitude` normalizes both axes with
-`Math.min`/`Math.abs` instead of assuming `y2 > y`. The `y-axis` label gap remains the one accepted,
-known gap (the line is ignored with a single non-fatal parse error and the axis keeps its hardcoded
-"Value Chain" caption).
+`Math.min`/`Math.abs` instead of assuming `y2 > y`.
 
 Passing constructs: header-form pipelines, submaps, accelerators/deaccelerators, notes, annotations,
 evolved components with label offsets, custom `x-axis` labels, and all five themes. The `y-axis`
