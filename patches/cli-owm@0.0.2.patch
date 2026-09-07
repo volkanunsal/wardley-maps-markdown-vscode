@@ -1,0 +1,48 @@
+diff --git a/dist/render.js b/dist/render.js
+index 73edd41c74f9e97432ca0b0a880773153235d105..087cd68e6fc99da856a5013b183e25a7a2b11105 100644
+--- a/dist/render.js
++++ b/dist/render.js
+@@ -213,13 +213,15 @@ function renderAttitude(att, width, height, theme) {
+     const y = visibilityToY(att.visibility, height);
+     const x2 = maturityToX(att.maturity2, width);
+     const y2 = visibilityToY(att.visibility2, height);
+-    const w = x2 - x;
+-    const h = y2 - y;
++    const rectX = Math.min(x, x2);
++    const rectY = Math.min(y, y2);
++    const w = Math.abs(x2 - x);
++    const h = Math.abs(y2 - y);
+     const attType = att.attitude;
+     const style = theme.attitudes?.[attType];
+     if (!style)
+         return '';
+-    return `<rect x="${x}" y="${y}" width="${w}" height="${h}" ` +
++    return `<rect x="${rectX}" y="${rectY}" width="${w}" height="${h}" ` +
+         `fill="${style.fill ?? 'none'}" stroke="${style.stroke ?? 'none'}" ` +
+         `fill-opacity="${style.fillOpacity ?? 0.4}" stroke-opacity="${style.strokeOpacity ?? 0.7}" ` +
+         `stroke-width="${theme.attitudes?.strokeWidth ?? '5px'}"/>`;
+@@ -301,11 +303,24 @@ function renderPipeline(pipeline, allComponents, width, height, theme) {
+     const pipelineHeight = 22;
+     const sw = theme.component?.pipelineStrokeWidth ?? 1;
+     const str = theme.component?.stroke ?? 'black';
++    const fill = theme.component?.fill ?? 'white';
++    const textColor = theme.component?.textColor ?? 'black';
++    const fontSize = theme.component?.fontSize ?? '14px';
++    const fontFamily = theme.fontFamily ?? '';
++    const childParts = (pipeline.components ?? []).map((child) => {
++        const localX = Math.min(Math.max(maturityToX(child.maturity, width) - x1, 5), pipelineWidth - 5);
++        const localY = pipelineHeight / 2;
++        return `<rect x="${localX - 5}" y="${localY - 5}" width="10" height="10" ` +
++            `fill="${fill}" stroke="${str}" stroke-width="${sw}"/>` +
++            `<text x="${localX + 7}" y="${localY + 4}" font-size="${fontSize}" ` +
++            `font-family="${esc(fontFamily)}" fill="${textColor}">${esc(child.name)}</text>`;
++    }).join('\n  ');
+     return `<g transform="translate(${x1},${y - 11})">
+   <line x1="0" y1="0" x2="${pipelineWidth}" y2="0" stroke-width="${sw}" stroke="${str}"/>
+   <line x1="${pipelineWidth}" y1="0" x2="${pipelineWidth}" y2="${pipelineHeight}" stroke-width="${sw}" stroke="${str}"/>
+   <line x1="${pipelineWidth}" y1="${pipelineHeight}" x2="0" y2="${pipelineHeight}" stroke-width="${sw}" stroke="${str}"/>
+   <line x1="0" y1="${pipelineHeight}" x2="0" y2="0" stroke-width="${sw}" stroke="${str}"/>
++  ${childParts}
+ </g>`;
+ }
+ function isPipelineComponent(comp, pipelines) {

@@ -4,13 +4,18 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  cli-owm@0.0.2:
+    hash: be534bb6184ba1117085cf4ac2daba05e7656a71f1ba98eedc85ed35761f7c99
+    path: patches/cli-owm@0.0.2.patch
+
 importers:
 
   .:
     dependencies:
       cli-owm:
         specifier: ^0.0.2
-        version: 0.0.2
+        version: 0.0.2(patch_hash=be534bb6184ba1117085cf4ac2daba05e7656a71f1ba98eedc85ed35761f7c99)
       markdown-it:
         specifier: ^15.0.1
         version: 15.0.1
@@ -2221,7 +2226,7 @@ snapshots:
   chownr@1.1.4:
     optional: true
 
-  cli-owm@0.0.2:
+  cli-owm@0.0.2(patch_hash=be534bb6184ba1117085cf4ac2daba05e7656a71f1ba98eedc85ed35761f7c99):
     dependencies:
       lodash.merge: 4.6.2
 

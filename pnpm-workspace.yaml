@@ -1,0 +1,2 @@
+patchedDependencies:
+  cli-owm@0.0.2: patches/cli-owm@0.0.2.patch
