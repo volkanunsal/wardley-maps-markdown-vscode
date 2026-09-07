@@ -1,0 +1,45 @@
+.wardley-map {
+  position: relative;
+  overflow: hidden;
+  margin: 1em 0;
+}
+
+.wardley-map svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wardley-zoom-viewport {
+  overflow: hidden;
+}
+
+.wardley-zoom-controls {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  gap: 4px;
+  z-index: 1;
+}
+
+.wardley-zoom-controls button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--vscode-widget-border, #454545);
+  background: var(--vscode-editor-background, #1e1e1e);
+  color: var(--vscode-editor-foreground, #cccccc);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.wardley-error {
+  padding: 0.5em 1em;
+  border: 1px solid var(--vscode-inputValidation-errorBorder, #be1100);
+  background: var(--vscode-inputValidation-errorBackground, #5a1d1d);
+  color: var(--vscode-editor-foreground, #cccccc);
+  font-family: var(--vscode-editor-font-family, monospace);
+  white-space: pre-wrap;
+}
