@@ -1,0 +1,75 @@
+{
+  "name": "wardley-maps-markdown-vscode",
+  "displayName": "Wardley Maps for Markdown",
+  "description": "Render Wardley maps inline in the VS Code Markdown preview",
+  "version": "0.1.0",
+  "publisher": "VolkanUnsal",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/volkanunsal/wardley-maps-markdown-vscode"
+  },
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.85.0",
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@10.34.5",
+  "categories": ["Other"],
+  "activationEvents": ["onLanguage:markdown"],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "markdown.previewScripts": ["./media/previewScript.js"],
+    "markdown.previewStyles": ["./media/previewStyles.css"],
+    "languages": [
+      {
+        "id": "owm",
+        "aliases": ["Wardley Map (OWM)"]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "owm",
+        "scopeName": "source.owm",
+        "path": "./syntaxes/owm.tmLanguage.json"
+      },
+      {
+        "scopeName": "markdown.owm.codeblock",
+        "path": "./syntaxes/owm.markdown-injection.json",
+        "injectTo": ["text.html.markdown"],
+        "embeddedLanguages": {
+          "meta.embedded.block.owm": "owm"
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "typecheck": "tsc -p . --noEmit",
+    "build": "node esbuild.config.js",
+    "watch": "node esbuild.config.js --watch",
+    "compile": "pnpm run typecheck && pnpm run build",
+    "test": "node --test --import tsx test/*.test.ts test/diagnostics/*.test.ts",
+    "icons": "bash scripts/generate-icons.sh",
+    "vscode:prepublish": "pnpm run compile"
+  },
+  "dependencies": {
+    "cli-owm": "^0.0.2",
+    "markdown-it": "^15.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.9.2",
+    "esbuild": "^0.23.0",
+    "jsdom": "^24.1.0",
+    "tsx": "^4.16.0",
+    "typescript": "^5.5.0",
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.1.0"
+  }
+}

@@ -1,0 +1,12 @@
+node_modules/**
+src/**
+test/**
+docs/**
+examples/**
+scripts/**
+.github/**
+.vscode/**
+**/*.map
+tsconfig.json
+esbuild.config.js
+pnpm-lock.yaml
