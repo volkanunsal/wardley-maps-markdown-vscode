@@ -19,17 +19,27 @@
     "node": ">=20"
   },
   "packageManager": "pnpm@10.34.5",
-  "categories": ["Other"],
-  "activationEvents": ["onLanguage:markdown"],
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "markdown.markdownItPlugins": true,
-    "markdown.previewScripts": ["./media/previewScript.js"],
-    "markdown.previewStyles": ["./media/previewStyles.css"],
+    "markdown.previewScripts": [
+      "./media/previewScript.js"
+    ],
+    "markdown.previewStyles": [
+      "./media/previewStyles.css"
+    ],
     "languages": [
       {
         "id": "owm",
-        "aliases": ["Wardley Map (OWM)"]
+        "aliases": [
+          "Wardley Map (OWM)"
+        ]
       }
     ],
     "grammars": [
@@ -41,7 +51,9 @@
       {
         "scopeName": "markdown.owm.codeblock",
         "path": "./syntaxes/owm.markdown-injection.json",
-        "injectTo": ["text.html.markdown"],
+        "injectTo": [
+          "text.html.markdown"
+        ],
         "embeddedLanguages": {
           "meta.embedded.block.owm": "owm"
         }
@@ -62,6 +74,7 @@
     "markdown-it": "^15.0.1"
   },
   "devDependencies": {
+    "@types/jsdom": "^30.0.0",
     "@types/node": "^20.14.0",
     "@types/vscode": "^1.85.0",
     "@vscode/vsce": "^3.9.2",
