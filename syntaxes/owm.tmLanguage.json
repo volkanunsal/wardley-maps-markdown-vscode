@@ -1,0 +1,53 @@
+{
+  "name": "OWM",
+  "scopeName": "source.owm",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#decorators" },
+    { "include": "#operators" },
+    { "include": "#strings" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.double-slash.owm", "match": "//.*$" },
+        { "name": "comment.block.owm", "begin": "/\\*", "end": "\\*/" }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.owm",
+          "match": "^\\s*(title|component|anchor|evolve|pipeline|submap|market|ecosystem|note|annotations?|x-axis|y-axis|pioneers|settlers|townplanners|accelerator|deaccelerator|url|style|size)\\b"
+        }
+      ]
+    },
+    "decorators": {
+      "patterns": [
+        {
+          "name": "support.function.decorator.owm",
+          "match": "\\((build|buy|outsource|market|ecosystem|inertia)\\)"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        { "name": "keyword.operator.arrow.owm", "match": "->" },
+        { "name": "punctuation.section.block.owm", "match": "[{}]" },
+        { "name": "punctuation.section.coordinates.owm", "match": "[\\[\\]]" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        { "name": "string.quoted.double.owm", "begin": "\"", "end": "\"" }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.owm", "match": "-?\\d+(\\.\\d+)?" }
+      ]
+    }
+  }
+}

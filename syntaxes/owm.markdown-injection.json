@@ -1,0 +1,20 @@
+{
+  "scopeName": "markdown.owm.codeblock",
+  "injectionSelector": "L:text.html.markdown",
+  "patterns": [
+    {
+      "name": "markup.fenced_code.block.markdown",
+      "begin": "(^|\\G)(\\s*)(```+)\\s*(owm|wardley)\\s*$",
+      "beginCaptures": {
+        "3": { "name": "punctuation.definition.markdown" },
+        "4": { "name": "fenced_code.block.language.markdown" }
+      },
+      "end": "(^|\\G)(\\2|\\s{0,3})(```+)\\s*$",
+      "endCaptures": {
+        "3": { "name": "punctuation.definition.markdown" }
+      },
+      "contentName": "meta.embedded.block.owm",
+      "patterns": [{ "include": "source.owm" }]
+    }
+  ]
+}
