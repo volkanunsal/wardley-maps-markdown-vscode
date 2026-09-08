@@ -2,7 +2,7 @@
   "name": "wardley-maps-markdown-vscode",
   "displayName": "Wardley Maps for Markdown",
   "description": "Render Wardley maps inline in the VS Code Markdown preview",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "VolkanUnsal",
   "license": "MIT",
   "icon": "media/icon.png",
