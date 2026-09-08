@@ -2,7 +2,7 @@ export type WardleyThemeName = "plain" | "handwritten" | "wardley" | "dark" | "c
 
 const themeClassMap: Record<string, WardleyThemeName> = {
   "vscode-dark": "dark",
-  "vscode-light": "wardley",
+  "vscode-light": "plain",
   "vscode-high-contrast": "plain",
   "vscode-high-contrast-light": "plain",
 };
@@ -14,5 +14,5 @@ export function detectVsCodeTheme(document: Document): WardleyThemeName {
       return themeName;
     }
   }
-  return "wardley";
+  return "plain";
 }
