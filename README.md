@@ -31,7 +31,7 @@ Business->Cup of Tea
 That fence renders inline, in place, as an SVG:
 
 <p align="center">
-  <img src="media/example-tea-shop.svg" alt="A rendered Wardley map: Tea Shop, showing Business and Public anchors evolving down through Cup of Tea, Cup, Tea, Hot Water, Water, Kettle, and Power components." width="640">
+  <img src="media/example-tea-shop.png" alt="A rendered Wardley map: Tea Shop, showing Business and Public anchors evolving down through Cup of Tea, Cup, Tea, Hot Water, Water, Kettle, and Power components." width="640">
 </p>
 
 Any other fence info (` ```js `, ` ```yaml `, etc.) is untouched and falls through to markdown-it's default renderer.
