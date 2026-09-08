@@ -43,6 +43,16 @@ test("createRenderer.renderOne decodes the placeholder and mounts an SVG", () =>
   assert.ok(element.querySelector(".wardley-zoom-viewport"));
 });
 
+test("createRenderer defaults to the plain theme when no getDefaultTheme is provided", () => {
+  const dom = new JSDOM(`<div class="wardley-map" data-source="${encode(TEA_SHOP)}" data-config="${encode("{}")}"></div>`);
+  const element = dom.window.document.querySelector(".wardley-map") as unknown as HTMLElement;
+  const renderer = createRenderer({});
+  renderer.renderOne(element);
+  const svg = element.querySelector("svg");
+  assert.ok(svg);
+  assert.match(svg!.innerHTML, /fill="white" id="fillArea"/);
+});
+
 test("a non-fatal cli-owm parse error still mounts the map, not an error card", () => {
   // `y-axis` is the confirmed case: cli-owm records a non-fatal ParseError for
   // it while render() still returns the complete map. Parse-error signal is the

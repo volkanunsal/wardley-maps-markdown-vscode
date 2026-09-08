@@ -16,7 +16,7 @@ export function resolveTheme(requested: string | undefined, fallback: string): M
   if (requestedKey && themes[requestedKey]) {
     return themes[requestedKey];
   }
-  return themes[fallbackKey] ?? themes.wardley;
+  return themes[fallbackKey] ?? themes.plain;
 }
 
 export function renderSource(
@@ -88,7 +88,7 @@ export function createRenderer(deps: RendererDeps): {
         ? JSON.parse(rawConfig)
         : {};
 
-      const defaultThemeName = deps.getDefaultTheme?.() ?? "wardley";
+      const defaultThemeName = deps.getDefaultTheme?.() ?? "plain";
       // cli-owm is lenient: a construct it does not fully support (`y-axis`,
       // for one) lands a non-fatal ParseError in map.errors while render()
       // still returns a complete SVG for everything else. Those belong in the
