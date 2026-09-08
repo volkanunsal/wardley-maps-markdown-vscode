@@ -1,4 +1,15 @@
-# Wardley Maps for Markdown
+<p align="center">
+  <img src="media/logo.png" alt="Wardley Maps for Markdown logo" width="128" height="128">
+</p>
+
+<h1 align="center">Wardley Maps for Markdown</h1>
+
+<p align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=VolkanUnsal.wardley-maps-markdown-vscode"><img alt="Visual Studio Marketplace Version" src="https://img.shields.io/visual-studio-marketplace/v/VolkanUnsal.wardley-maps-markdown-vscode"></a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=VolkanUnsal.wardley-maps-markdown-vscode"><img alt="Visual Studio Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/VolkanUnsal.wardley-maps-markdown-vscode"></a>
+  <a href="https://github.com/volkanunsal/wardley-maps-markdown-vscode/actions/workflows/ci.yml"><img alt="CI" src="https://github.com/volkanunsal/wardley-maps-markdown-vscode/actions/workflows/ci.yml/badge.svg"></a>
+  <a href="https://github.com/volkanunsal/wardley-maps-markdown-vscode/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/volkanunsal/wardley-maps-markdown-vscode"></a>
+</p>
 
 Renders Wardley maps written in the OnlineWardleyMaps (OWM) text format directly inside the VS Code Markdown preview, from an ```` ```owm ```` (or ```` ```wardley ````) fenced code block.
 
