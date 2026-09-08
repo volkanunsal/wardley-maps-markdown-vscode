@@ -8,7 +8,7 @@ const FENCE_INFOS = new Set(["owm", "wardley"]);
 
 export function wardleyMapsPlugin(markdownItInstance: MarkdownItInstance): void {
   const defaultFenceRenderer = markdownItInstance.renderer.rules.fence!.bind(
-    markdownItInstance.renderer.rules,
+    markdownItInstance.renderer,
   );
 
   const wardleyFenceRenderer: RendererRule = (tokens, tokenIndex, options, env, self) => {
