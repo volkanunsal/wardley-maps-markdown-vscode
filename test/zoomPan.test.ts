@@ -2,6 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { JSDOM } from "jsdom";
 import { attachZoomPan } from "../src/zoomPan";
+import { trackDocumentListeners } from "./listenerTracking";
 
 function makeViewport(
   width = 200,
@@ -46,6 +47,34 @@ function currentScale(svg: SVGElement): number {
   const match = svg.style.transform.match(/scale\(([^)]+)\)/);
   return match ? Number(match[1]) : 1;
 }
+
+test("the returned disposer removes the document-level listeners, so repeated attachments do not accumulate", () => {
+  const { diagramElement, viewport, svg, document, window } = makeViewport();
+
+  const liveDocumentListeners = trackDocumentListeners(document);
+
+  let dispose = attachZoomPan(diagramElement, viewport, svg);
+  assert.equal(liveDocumentListeners.count(), 2);
+
+  for (let i = 0; i < 3; i++) {
+    dispose();
+    dispose = attachZoomPan(diagramElement, viewport, svg);
+    assert.equal(liveDocumentListeners.count(), 2);
+  }
+
+  dispose();
+  assert.equal(liveDocumentListeners.count(), 0);
+
+  // A disposed attachment is inert: a drag started before disposal stops moving.
+  viewport.dispatchEvent(
+    new window.MouseEvent("mousedown", { clientX: 0, clientY: 0, ctrlKey: true, bubbles: true }),
+  );
+  const transformAtDisposal = svg.style.transform;
+  document.dispatchEvent(
+    new window.MouseEvent("mousemove", { clientX: 60, clientY: 60, bubbles: true }),
+  );
+  assert.equal(svg.style.transform, transformAtDisposal);
+});
 
 test("attaches zoom-out, reset, and zoom-in controls, and applies an identity transform initially", () => {
   const { diagramElement, svg } = makeViewport();
