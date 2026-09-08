@@ -24,23 +24,23 @@
     <path d="M0,-5L10,0L0,5" fill="black"/>
   </marker>
 </defs>
-<rect x="0" y="0" width="800" height="500" fill="url(#wardleyGradient)" id="fillArea"/>
+<rect x="0" y="0" width="800" height="500" fill="white" id="fillArea"/>
 <g id="valueChain" transform="translate(0,500) rotate(270)">
   <line x1="0" y1="0" x2="500" y2="0" stroke="black" stroke-width="1" stroke-dasharray="2,2"/>
-  <line x1="0" y1="140" x2="500" y2="140" stroke="#b8b8b8" stroke-dasharray="2,2" stroke-width="1"/>
-  <line x1="0" y1="320" x2="500" y2="320" stroke="#b8b8b8" stroke-dasharray="2,2" stroke-width="1"/>
-  <line x1="0" y1="560" x2="500" y2="560" stroke="#b8b8b8" stroke-dasharray="2,2" stroke-width="1"/>
-  <text x="250" y="-8" text-anchor="middle" font-size="12px" font-family="Consolas, Lucida Console, monospace" fill="black">Value Chain</text>
+  <line x1="0" y1="140" x2="500" y2="140" stroke="black" stroke-dasharray="2,2" stroke-width="1"/>
+  <line x1="0" y1="320" x2="500" y2="320" stroke="black" stroke-dasharray="2,2" stroke-width="1"/>
+  <line x1="0" y1="560" x2="500" y2="560" stroke="black" stroke-dasharray="2,2" stroke-width="1"/>
+  <text x="250" y="-8" text-anchor="middle" font-size="12px" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Value Chain</text>
 </g>
 <g id="Evolution" transform="translate(0,500)">
   <line x1="0" y1="0" x2="798" y2="0" stroke="black" stroke-width="1" marker-end="url(#graphArrow)"/>
-  <text x="0" y="1em" font-size="11px" font-family="Consolas, Lucida Console, monospace" fill="black">Genesis</text>
-  <text x="145" y="1em" font-size="11px" font-family="Consolas, Lucida Console, monospace" fill="black">Custom-Built</text>
-  <text x="325" y="1em" font-size="11px" font-family="Consolas, Lucida Console, monospace" fill="black">Product</text>
-  <text x="325" y="2em" font-size="11px" font-family="Consolas, Lucida Console, monospace" fill="black">(+rental)</text>
-  <text x="565" y="1em" font-size="11px" font-family="Consolas, Lucida Console, monospace" fill="black">Commodity</text>
-  <text x="565" y="2em" font-size="11px" font-family="Consolas, Lucida Console, monospace" fill="black">(+utility)</text>
-  <text x="800" y="1.8em" text-anchor="end" font-size="11px" font-family="Consolas, Lucida Console, monospace" fill="black">Evolution</text>
+  <text x="0" y="1em" font-size="11px" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Genesis</text>
+  <text x="145" y="1em" font-size="11px" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Custom-Built</text>
+  <text x="325" y="1em" font-size="11px" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Product</text>
+  <text x="325" y="2em" font-size="11px" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">(+rental)</text>
+  <text x="565" y="1em" font-size="11px" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Commodity</text>
+  <text x="565" y="2em" font-size="11px" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">(+utility)</text>
+  <text x="800" y="1.8em" text-anchor="end" font-size="11px" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Evolution</text>
 </g>
 <line x1="504" y1="25.00000000000002" x2="488" y2="104.99999999999999" stroke="grey" stroke-width="1"/>
 <line x1="624" y1="25.00000000000002" x2="488" y2="104.99999999999999" stroke="grey" stroke-width="1"/>
@@ -50,22 +50,22 @@
 <line x1="640" y1="240" x2="656" y2="310" stroke="grey" stroke-width="1"/>
 <line x1="640" y1="240" x2="280" y2="285.00000000000006" stroke="grey" stroke-width="1"/>
 <line x1="280" y1="285.00000000000006" x2="560" y2="450" stroke="grey" stroke-width="1"/>
-<text x="504" y="25.00000000000002" font-size="14px" font-weight="bold" font-family="Consolas, Lucida Console, monospace" fill="black" text-anchor="middle">Business</text>
-<text x="624" y="25.00000000000002" font-size="14px" font-weight="bold" font-family="Consolas, Lucida Console, monospace" fill="black" text-anchor="middle">Public</text>
+<text x="504" y="25.00000000000002" font-size="14px" font-weight="bold" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black" text-anchor="middle">Business</text>
+<text x="624" y="25.00000000000002" font-size="14px" font-weight="bold" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black" text-anchor="middle">Public</text>
 <circle cx="488" cy="104.99999999999999" r="5" fill="white" stroke="black" stroke-width="1"/>
-<text x="507" y="100.99999999999999" font-size="12px" font-weight="normal" font-family="Consolas, Lucida Console, monospace" fill="black">Cup of Tea</text>
+<text x="507" y="100.99999999999999" font-size="14px" font-weight="normal" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Cup of Tea</text>
 <circle cx="624" cy="135" r="5" fill="white" stroke="black" stroke-width="1"/>
-<text x="629" y="125" font-size="12px" font-weight="normal" font-family="Consolas, Lucida Console, monospace" fill="black">Cup</text>
+<text x="629" y="125" font-size="14px" font-weight="normal" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Cup</text>
 <circle cx="648" cy="185" r="5" fill="white" stroke="black" stroke-width="1"/>
-<text x="653" y="175" font-size="12px" font-weight="normal" font-family="Consolas, Lucida Console, monospace" fill="black">Tea</text>
+<text x="653" y="175" font-size="14px" font-weight="normal" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Tea</text>
 <circle cx="640" cy="240" r="5" fill="white" stroke="black" stroke-width="1"/>
-<text x="645" y="230" font-size="12px" font-weight="normal" font-family="Consolas, Lucida Console, monospace" fill="black">Hot Water</text>
+<text x="645" y="230" font-size="14px" font-weight="normal" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Hot Water</text>
 <circle cx="656" cy="310" r="5" fill="white" stroke="black" stroke-width="1"/>
-<text x="661" y="300" font-size="12px" font-weight="normal" font-family="Consolas, Lucida Console, monospace" fill="black">Water</text>
+<text x="661" y="300" font-size="14px" font-weight="normal" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Water</text>
 <circle cx="280" cy="285.00000000000006" r="5" fill="white" stroke="black" stroke-width="1"/>
-<text x="223" y="289.00000000000006" font-size="12px" font-weight="normal" font-family="Consolas, Lucida Console, monospace" fill="black">Kettle</text>
+<text x="223" y="289.00000000000006" font-size="14px" font-weight="normal" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Kettle</text>
 <circle cx="560" cy="450" r="5" fill="white" stroke="black" stroke-width="1"/>
-<text x="533" y="470" font-size="12px" font-weight="normal" font-family="Consolas, Lucida Console, monospace" fill="black">Power</text>
+<text x="533" y="470" font-size="14px" font-weight="normal" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Power</text>
 
-<text x="0" y="-10" font-weight="bold" font-size="20px" font-family="Consolas, Lucida Console, monospace" fill="black">Tea Shop</text>
+<text x="0" y="-10" font-weight="bold" font-size="20px" font-family="&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif" fill="black">Tea Shop</text>
 </svg>
