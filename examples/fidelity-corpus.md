@@ -1,22 +1,13 @@
 # `cli-owm` fidelity corpus
 
-## Gate verdict: PASS (2026-09-07, `cli-owm` 0.0.2 + `patches/cli-owm@0.0.2.patch`)
+Each `owm` fence below exercises one OWM DSL construct: pipelines (both syntax forms), submaps,
+accelerators/deaccelerators, notes, annotations, evolved components with label offsets, the
+pioneers/settlers/townplanners attitude boxes, custom `x-axis` labels, and all five render themes.
+Use it as a manual-verification fixture — render every fence and compare against
+onlinewardleymaps.com — or as a copy-paste starting point for your own maps.
 
-Both defects found in the original gate run are fixed by the local patch and confirmed by
-`test/cli-owm-patch.test.ts` (2/2 passing). **Block-form pipeline children** now render: `renderPipeline`
-iterates `pipeline.components` and draws each as a small rect + label positioned along the pipeline
-bar. **Attitude boxes** now render with a positive height: `renderAttitude` normalizes both axes with
-`Math.min`/`Math.abs` instead of assuming `y2 > y`.
-
-Passing constructs: header-form pipelines, submaps, accelerators/deaccelerators, notes, annotations,
-evolved components with label offsets, custom `x-axis` labels, and all five themes. The `y-axis`
-label gap is confirmed to be the known benign one — the line is ignored with a single non-fatal
-parse error and the axis keeps its hardcoded "Value Chain" caption.
-
----
-
-Each `owm` fence below exercises one OWM DSL construct. The corpus is the manual-verification
-fixture for the renderer: render every fence and compare against onlinewardleymaps.com.
+Every construct here renders correctly except custom `y-axis` labels (example 10), which is a known,
+documented limitation — see the README's "Known limitation" section.
 
 ## 01 — Base: Tea Shop
 
