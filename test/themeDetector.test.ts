@@ -12,14 +12,14 @@ test("vscode-dark maps to dark", () => {
   assert.equal(detectVsCodeTheme(documentWithBodyClass("vscode-dark")), "dark");
 });
 
-test("vscode-light maps to wardley", () => {
-  assert.equal(detectVsCodeTheme(documentWithBodyClass("vscode-light")), "wardley");
+test("vscode-light maps to plain", () => {
+  assert.equal(detectVsCodeTheme(documentWithBodyClass("vscode-light")), "plain");
 });
 
 test("vscode-high-contrast maps to plain", () => {
   assert.equal(detectVsCodeTheme(documentWithBodyClass("vscode-high-contrast")), "plain");
 });
 
-test("no recognized class falls back to wardley", () => {
-  assert.equal(detectVsCodeTheme(documentWithBodyClass("some-other-class")), "wardley");
+test("no recognized class falls back to plain", () => {
+  assert.equal(detectVsCodeTheme(documentWithBodyClass("some-other-class")), "plain");
 });

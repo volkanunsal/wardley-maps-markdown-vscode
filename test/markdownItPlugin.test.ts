@@ -19,6 +19,17 @@ test("wardley fence info is accepted as an alias", () => {
   assert.match(html, /class="wardley-map"/);
 });
 
+test("a fence info with trailing whitespace is still recognized", () => {
+  const html = render("```owm \ntitle Tea Shop\n```\n");
+  assert.match(html, /<div class="wardley-map" data-source="[^"]+" data-config="[^"]+"><\/div>/);
+  assert.doesNotMatch(html, /<pre><code/);
+});
+
+test("a wardley fence info with trailing whitespace is still recognized", () => {
+  const html = render("```wardley \ntitle Tea Shop\n```\n");
+  assert.match(html, /class="wardley-map"/);
+});
+
 test("other fence infos are untouched", () => {
   const html = render("```js\nconst x = 1;\n```\n");
   assert.match(html, /<pre><code class="language-js">/);

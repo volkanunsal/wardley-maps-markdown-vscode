@@ -26,7 +26,7 @@ export function attachZoomPan(
   diagramElement: HTMLElement,
   viewport: HTMLElement,
   svg: SVGElement,
-): void {
+): () => void {
   const ownerDocument = diagramElement.ownerDocument;
   const state: ZoomPanState = { ...INITIAL_STATE };
 
@@ -143,24 +143,37 @@ export function attachZoomPan(
     }
   });
 
-  ownerDocument.addEventListener("mousemove", (event: MouseEvent) => {
+  // Document-level, because a drag that leaves the viewport must keep panning
+  // and must still end on mouseup. These outlive the element they belong to, so
+  // the caller has to run the returned disposer before re-rendering this map --
+  // otherwise every content edit and every theme change leaves two more behind.
+  function onDocumentMouseMove(event: MouseEvent): void {
     if (!dragging) {
       return;
     }
     state.translateX = dragStartTranslateX + (event.clientX - dragStartClientX);
     state.translateY = dragStartTranslateY + (event.clientY - dragStartClientY);
     applyTransform();
-  });
+  }
 
-  ownerDocument.addEventListener("mouseup", (event: MouseEvent) => {
+  function onDocumentMouseUp(event: MouseEvent): void {
     if (!dragging) {
       return;
     }
     dragging = false;
     viewport.classList.remove("wardley-zoom-dragging");
     updatePointerAffordance(event);
-  });
+  }
+
+  ownerDocument.addEventListener("mousemove", onDocumentMouseMove);
+  ownerDocument.addEventListener("mouseup", onDocumentMouseUp);
 
   applyTransform();
   updatePointerAffordance();
+
+  return () => {
+    dragging = false;
+    ownerDocument.removeEventListener("mousemove", onDocumentMouseMove);
+    ownerDocument.removeEventListener("mouseup", onDocumentMouseUp);
+  };
 }

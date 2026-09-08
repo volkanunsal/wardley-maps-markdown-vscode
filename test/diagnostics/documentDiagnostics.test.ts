@@ -28,6 +28,13 @@ test("offsets columns by the fence body's indentation", () => {
   assert.ok(diagnostics[0].startColumn >= 2);
 });
 
+test("a fence info with trailing whitespace is still scanned for diagnostics", () => {
+  const markdown = "```owm \ntitle Broken\ncomponent Foo [0.5, 1.4]\n```\n";
+  const diagnostics = computeDocumentDiagnostics(markdown);
+  assert.equal(diagnostics.length, 1);
+  assert.equal(diagnostics[0].line, 2);
+});
+
 test("a document with no fences has no diagnostics", () => {
   assert.deepEqual(computeDocumentDiagnostics("# Just a heading\n"), []);
 });

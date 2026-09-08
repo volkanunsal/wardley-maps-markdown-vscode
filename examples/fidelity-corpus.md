@@ -7,7 +7,9 @@ Use it as a manual-verification fixture — render every fence and compare again
 onlinewardleymaps.com — or as a copy-paste starting point for your own maps.
 
 Every construct here renders correctly except custom `y-axis` labels (example 10), which is a known,
-documented limitation — see the README's "Known limitation" section.
+documented limitation — see the README's "Known limitation" section. Example 10 still renders its map;
+only the custom vertical-axis labels are dropped, and the fence gets an informational diagnostic
+saying so.
 
 ## 01 — Base: Tea Shop
 

@@ -55,7 +55,7 @@ Business->Cup of Tea
 
 | Key | Values | Default |
 | --- | --- | --- |
-| `theme` | `plain`, `handwritten`, `wardley`, `dark`, `colour` | auto — `dark` under a dark VS Code theme, `wardley` otherwise |
+| `theme` | `plain`, `handwritten`, `wardley`, `dark`, `colour` | auto — `dark` under a dark VS Code theme, `plain` otherwise |
 | `width` | integer px | renderer default |
 | `height` | integer px | renderer default |
 
@@ -63,7 +63,11 @@ An unknown key is reported as a diagnostic on the host document; the map still r
 
 ## Map syntax
 
-The renderer supports the OWM DSL: `title`, `anchor`/`component` with `[maturity, visibility]` coordinates and optional `label [x, y]` offsets, `build`/`buy`/`outsource`/`market`/`ecosystem`/`inertia` decorators, `evolve` (with an optional `->` rename and target maturity), `pipeline` in both header form (`pipeline Name [maturity]`) and block form (`pipeline Name { component ... }`), `submap` with a `url`, legacy `market`/`ecosystem`, `note`, `annotation`/`annotations`, custom `x-axis` labels (`evolution A->B->C->D`), `pioneers`/`settlers`/`townplanners` attitude boxes, `accelerator`/`deaccelerator`, `size`, `style`, and both `//` and `/* */` comments.
+The renderer supports the OWM DSL: `title`, `anchor`/`component` with `[visibility, maturity]` coordinates and optional `label [x, y]` offsets, `build`/`buy`/`outsource`/`(market)`/`(ecosystem)`/`inertia` decorators, `evolve` (with an optional `->` rename and target maturity), `pipeline` in both header form (`pipeline Name [maturity]`) and block form (`pipeline Name { component ... }`), `submap` with a `url`, `note`, `annotation`/`annotations`, custom `x-axis` labels (`evolution A->B->C->D`), `pioneers`/`settlers`/`townplanners` attitude boxes, `accelerator`/`deaccelerator`, `size`, `style`, and both `//` and `/* */` comments.
+
+Coordinates are visibility first, maturity second. In `component Cup of Tea [0.79, 0.61]`, `0.79` is visibility (the vertical value-chain axis) and `0.61` is maturity (the horizontal evolution axis).
+
+`market` and `ecosystem` work as the decorator forms `(market)` and `(ecosystem)` on a `component` line. The standalone statement forms (`market Users [0.5, 0.5]`) are not: the OWM parser reports the line as a parse error and it contributes nothing to the map.
 
 `examples/fidelity-corpus.md` in this repo has one worked fence per construct, useful as a reference or a copy-paste starting point.
 
