@@ -11,7 +11,7 @@
   <a href="https://github.com/volkanunsal/wardley-maps-markdown-vscode/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/volkanunsal/wardley-maps-markdown-vscode"></a>
 </p>
 
-Renders Wardley maps written in the OnlineWardleyMaps (OWM) text format directly inside the VS Code Markdown preview, from an ```` ```owm ```` (or ```` ```wardley ````) fenced code block.
+Renders [Wardley maps](http://wardleymaps.com/) written in the [OnlineWardleyMaps](https://onlinewardleymaps.com/) (OWM) text format directly inside the VS Code Markdown preview, from an ```` ```owm ```` (or ```` ```wardley ````) fenced code block.
 
 This is a different extension from [`damonsk.vscode-wardley-maps`](https://marketplace.visualstudio.com/items?itemName=damonsk.vscode-wardley-maps), the established `.owm`/`.wm` file editor with SVG/PNG export and publish-to-onlinewardleymaps.com support. The two are complementary and safe to install together: this extension never claims the `.owm` or `.wm` file extension, and only activates on Markdown fences. Use `damonsk.vscode-wardley-maps` to author and export standalone map files; use this extension to see a map render inline wherever it's embedded in prose — a strategy doc, a research report, a vault note.
 
